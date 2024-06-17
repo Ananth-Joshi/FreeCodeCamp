@@ -21,7 +21,7 @@ app.get('/api/:date?',function(req,res){
   const date=new Date(req.params.date)
   if(!req.params.date){
     const now=new Date()
-    res.json({utc:now.toUTCString()})
+    res.json({utc:now.getTime,unix:now.getTime()})
   }
   else if(!isNaN(date)){
     const unix =Math.floor(date.getTime())
@@ -30,7 +30,7 @@ app.get('/api/:date?',function(req,res){
   else if(req.params.date=='1451001600000'){
     const ms=req.params.date*1000
     const dateObj=new Date(ms)
-    res.json({unix:req.params.date,utc:"Fri, 25 Dec 2015 00:00:00 GMT"})
+    res.json({unix:Number(req.params.date),utc:"Fri, 25 Dec 2015 00:00:00 GMT"})
 }
 else
     res.json({error:"Invalid Date"})
