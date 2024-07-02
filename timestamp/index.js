@@ -21,7 +21,7 @@ app.get('/api/:date?',function(req,res){
   const date=new Date(req.params.date)
   if(!req.params.date){
     const now=new Date()
-    res.json({utc:now.getTime,unix:now.getTime()})
+    res.json({utc:now.getTime(),unix:now.getTime()})
   }
   else if(!isNaN(date)){
     const unix =Math.floor(date.getTime())
