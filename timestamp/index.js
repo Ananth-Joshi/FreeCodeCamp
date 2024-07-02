@@ -37,19 +37,6 @@ else
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
